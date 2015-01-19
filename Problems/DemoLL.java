@@ -1,5 +1,6 @@
 package Problems;
 
+import LinkedList.IteratorCustomized;
 import LinkedList.LinkedListHelper;
 
 
@@ -10,29 +11,34 @@ public class DemoLL {
 	 */
 	public static void main(String args[])
 	{
-		LinkedListHelper<Character> list = new LinkedListHelper<Character>();
-		
-		/*list.addAtStart(3);
+		LinkedListHelper<Integer> list = new LinkedListHelper<Integer>();
+		//List functions
+		list.addAtStart(3);
+		list.addAtEnd(4);
 		list.addAtEnd(5);
-		list.addAtEnd(8);
-		list.addAtStart(10);
+		list.addAtStart(2);
+		list.addAtStart(1);
 		list.addAtEnd(6);
-		list.display();*/
-		NthEndNode<Object> Nthnode=new NthEndNode<Object>();
-		MiddleElement<Object> mid=new MiddleElement<Object>();
-		//IteratorCustomized<Object> itr1=l.iterator();
-		//IteratorCustomized<Object> itr2=l.iterator();
-		int position=2;
-		
-		//System.out.println("\n"+position+" Node from the end is :"+Nthnode.getNthEndNode(itr1,itr2,l,position));
-		//System.out.println("\nMiddle Element is "+mid.getMiddleElement(itr1,itr2,l));
+		//list.addAtEnd(7);
+		list.display();
+		//NthEndNode<Object> Nthnode=new NthEndNode<Object>();
+		MiddleElement<Integer> mid=new MiddleElement<Integer>();
+		IteratorCustomized<Integer> itr1=list.iterator();
+		IteratorCustomized<Integer> itr2=list.iterator();
+		int position=4;
+		 //Finding Nth End node in the list 
+		//System.out.println("\n"+position+" Node from the end is :"+Nthnode.getNthEndNode(itr1,itr2,list,position));
+		//Finding the middle Element
+		System.out.println("\nMiddle Element is "+mid.getMiddleElement(itr1,itr2,list));
 	    Stack<Character> stack=new Stack<Character>();
 	    Queue<Object> queue=new Queue<Object>();
+	    //stack operations
 	   /* stack.push(1);
 	    stack.push(2);
 	    stack.push(3);
 	    stack.push(4);
 	    stack.push(5);
+	    //Queue operations
 	   /* queue.enqueue(1);
 	    queue.enqueue(2);
 	    queue.enqueue(3);
@@ -45,10 +51,10 @@ public class DemoLL {
 	    list.display();
 	    
 	    }*/
-	
-	    String symbol="())";
+	//To check for balanced Parenthesis
+	 String symbol="(({(}))";
 	Parenthesis parenthesis =new Parenthesis();
-	System.out.println("\n"+parenthesis.checkParenthesis(stack,symbol));
+	//System.out.println("\n"+parenthesis.checkParenthesis(stack,symbol));
 	
 }
 }

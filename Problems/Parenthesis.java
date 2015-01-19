@@ -14,8 +14,10 @@ import LinkedList.LinkedListHelper;
 public class Parenthesis {
 
 	/**
-	 * @param l
-	 *            List object to traverse the list elements
+	 * @param stack
+	 *            - To add and remove elements from the stack
+	 * @param symbol
+	 *            - String to be checked for balanced Parenthesis
 	 * @return
 	 */
 	public boolean checkParenthesis(Stack<Character> stack, String symbol) {
@@ -25,9 +27,10 @@ public class Parenthesis {
 		hm.put(']', '[');
 		char[] symbol_char = symbol.toCharArray();
 		for (int count = 0; count < symbol.length(); count++) {
-
+			// check if Stack is empty
 			if (stack.stackEmpty())
 				stack.push(symbol_char[count]);
+			// Check if the pair is present
 			else if (hm.containsKey(symbol_char[count])
 					&& stack.stackTop() == hm.get(symbol_char[count]))
 				stack.pop();
@@ -35,7 +38,8 @@ public class Parenthesis {
 				stack.push(symbol_char[count]);
 
 		}
-		if (stack.stackSize() == 0) {
+		// check if stack is empty
+		if (stack.stackEmpty()) {
 			return true;
 		} else {
 			return false;

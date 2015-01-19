@@ -4,40 +4,42 @@ import java.util.NoSuchElementException;
 
 import LinkedList.LinkedListHelper;
 
-
 /**
  * @author SESA366037
- *
- * @param <T> Generic type
+ * 
+ * @param <T>
+ *            Generic type
  */
-public class Queue<T>{
+public class Queue<T> {
 
 	/**
-	 * @param l List object to traverse the list
-	 * @param data value to be added in the stack
+	 * @param l
+	 *            List object to traverse the list
+	 * @param data
+	 *            value to be added in the stack
 	 */
-	LinkedListHelper<T> list=new LinkedListHelper<T>();
-	public void enqueue(T data)
-	{
+	LinkedListHelper<T> list = new LinkedListHelper<T>();
+
+	// Add element to the end of queue
+	public void enqueue(T data) {
 		{
 			list.addAtEnd(data);
 		}
 	}
-		public T dequeue()
-		{
-			
-			 T value=(T) list.getNodeAt(1).getData();
-			 list.DelFirst();
-			
-			 return value;
-			 
-	}
-		
-		public void printQueue()
-		{
-			list.display();
-		}
-		
-	
-}
 
+	// Remove element from the end of queue
+	public T dequeue() {
+
+		T value = (T) list.getNodeAt(1).getData();
+		list.DelFirst();
+
+		return value;
+
+	}
+
+	// Print the queue
+	public void printQueue() {
+		list.display();
+	}
+
+}
