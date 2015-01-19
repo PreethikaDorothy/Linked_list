@@ -16,18 +16,18 @@ public class Queue<T>{
 	 * @param l List object to traverse the list
 	 * @param data value to be added in the stack
 	 */
-	LinkedListHelper<T> l=new LinkedListHelper<T>();
+	LinkedListHelper<T> list=new LinkedListHelper<T>();
 	public void enqueue(T data)
 	{
 		{
-			l.addAtEnd(data);
+			list.addAtEnd(data);
 		}
 	}
 		public T dequeue()
 		{
 			
-			 T value=(T) l.getNodeAt(1).getData();
-			 l.DelFirst();
+			 T value=(T) list.getNodeAt(1).getData();
+			 list.DelFirst();
 			
 			 return value;
 			 
@@ -35,7 +35,7 @@ public class Queue<T>{
 		
 		public void printQueue()
 		{
-			l.display();
+			list.display();
 		}
 		
 	

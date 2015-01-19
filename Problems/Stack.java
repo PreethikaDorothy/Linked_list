@@ -13,32 +13,41 @@ import LinkedList.LinkedListHelper;
 public class Stack<T>{
 
 	/**
-	 * @param l List object to traverse the list
+	 * @param list- List object to traverse the list
 	 * @param data value to be added in the stack
 	 */
-	public void push(LinkedListHelper<T> l,T data)
+	LinkedListHelper<T> list=new LinkedListHelper<T>();
+	public void push(T data)
 	{
 		{
-			l.addAtEnd(data);
+			list.addAtEnd(data);
 		}
 	}
-		public T pop(LinkedListHelper<T> l)
+		public T pop()
 		{
 			
-			 T value=(T) l.getNodeAt(l.getSize()).getData();
-			 l.DelLast();
+			 T value=(T) list.getNodeAt(list.getSize()).getData();
+			 list.DelLast();
 			
 			 return value;
 			 
 	}
-		public T stackTop(LinkedListHelper<T> l)
+		public T stackTop()
 		{
-			 T value=(T) l.getNodeAt(l.getSize()).getData();
+			 T value=(T) list.getNodeAt(list.getSize()).getData();
 			return value;
 		}
-		public void printStack(LinkedListHelper<T> l)
+		public void printStack()
 		{
-			l.display();
+			list.display();
+		}
+		public boolean stackEmpty()
+		{
+			return list.IsEmpty();
+		}
+		public int stackSize()
+		{
+			return list.getSize();
 		}
 		
 }
